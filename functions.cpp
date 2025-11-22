@@ -22,10 +22,10 @@ void DisplayDeck(Cards deck[52]) {
     }
 }
 
-Cards NewDeck() {
+void NewDeck(Cards deck[52]) {
 
     std::string suitNames[4] = {"Clubs","Diamonds","Hearts", "Spades"};
-    Cards deck[52];
+
 
     int index=0;
     for (int i =0; i < 4; i++) {
@@ -37,17 +37,15 @@ Cards NewDeck() {
         }
 
     }
-    DisplayDeck(deck);
-    ShuffleCards(deck);
-    DisplayDeck(deck);
 
-    return deck[52];
+
+
 }
 void ShuffleCards(Cards deck[52]) {
 
-    for (int i =0; i < 51; i++) {
+    for (int i =0; i < 52; i++) {
 
-        int random_card = rand() % (1 + i);
+        int random_card = rand() % (i + 1);
         Cards temp_card = deck[i];
         deck[i] = deck[random_card];
         deck[random_card] = temp_card;
