@@ -12,11 +12,12 @@ void ShuffleCards(Cards deck[52]) ;
 
 //testing purposes
 void DisplayDeck(Cards deck[52]) {
-    for (int i =0; i < 51; i++) {
+    for (int i =0; i < 52; i++) {
 
-        std::cout<<deck[i].suit<<std::endl;
+        std::cout<<deck[i].suit<< " ";
         std::cout<<deck[i].cardValue<<std::endl;
     }
+    std::cout<<"end display";
 }
 
 void NewDeck(Cards deck[52]) {
@@ -38,8 +39,6 @@ void NewDeck(Cards deck[52]) {
 }
 
 void ShuffleCards(Cards deck[52]) {
-
-
     for (int i =0; i < 52; i++) {
         //get random int between 0 and loop count
         int random_card = rand() % (i + 1);
@@ -51,7 +50,6 @@ void ShuffleCards(Cards deck[52]) {
     }
 
 }
-
 //function types are defined as void for default change if needed
 void UserInputLoop() {
 
